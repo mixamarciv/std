@@ -402,3 +402,28 @@ function urlencode_array($var,$main_var=""){
   return implode("&", $toImplode);
 }
 //-----------------------------------------------------------------------------
+$mx_str_format_space = "                           ";
+function mx_str_format($var,$need_length,$align='left'){
+  $s = (string)$var;
+  $len = strlen($s);
+  if($len==$need_length) return $s;
+  if($len>$need_length){
+    $s = substr($s,0,$need_length);
+    return $s;
+  }
+
+  {
+    global $mx_str_format_space;
+    if($align=='left'){
+      $s .= $mx_str_format_space;
+      while(($len=strlen($s))<$need_length) $s .= $mx_str_format_space;
+      $s = substr($s,0,$need_length);
+      return $s;
+    }
+    $s = $mx_str_format_space.$s;
+    while(($len=strlen($s))<$need_length) $s = $mx_str_format_space.$s;
+    $s = substr($s,$len-$need_length,$need_length);
+    return $s;
+  }
+}
+//-----------------------------------------------------------------------------
