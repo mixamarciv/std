@@ -164,9 +164,7 @@ class myDBQuery{
 
     function exec($str_query,$options=array()){
         $this->m_fields_info = 0;
-        if( $this->m_myDBQuery_class==NULL ){
-            return 0;
-        }
+        if( $this->m_myDBQuery_class==NULL ) return 0;
         return $this->m_myDBQuery_class->exec($str_query,$options);
     }
     
@@ -486,7 +484,7 @@ class myDBQuery_ibase extends myDBQuery__base{
             return 0;
         }
         $this->m_result = ibase_query( $this->m_myDB_class->connect_resource(), $str_query);
-        if($this->m_result === false){
+        if($this->m_result == 0){
           $this->m_get_last_error();
           return 0;
         }
