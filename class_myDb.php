@@ -263,6 +263,8 @@ class myDBQuery{
         case "nume": return "double";   //numeric(10,2)
         case "int" : return "integer";  
         case "smal": return "integer";  //smallint
+        case "time": return "date";     //timestamp
+        case "date": return "date";     //date
       }
       return strtolower(trim($field_info['type']));
     }
