@@ -1,4 +1,4 @@
-<?php
+п»ї<?php
 include_once(dirname(__FILE__)."/strFunc.php");
 include_once(dirname(__FILE__)."/paramParser.php");
 include_once(dirname(__FILE__)."/class_myDb.php");
@@ -9,7 +9,7 @@ function connect_app_param_db($param_parser)
 {
     $app_database = $param_parser->fvar("app_database");
     if(strlen($app_database)<1){
-      $msg = tr("подключения к БД приложения НЕ ВОЗМОЖНО!, переменная/параметр \"app_database\" незадана\n");
+      $msg = tr("РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р” РїСЂРёР»РѕР¶РµРЅРёСЏ РќР• Р’РћР—РњРћР–РќРћ!, РїРµСЂРµРјРµРЅРЅР°СЏ/РїР°СЂР°РјРµС‚СЂ \"app_database\" РЅРµР·Р°РґР°РЅР°\n");
       die($msg);
     }
     $app_host = $param_parser->fvar("app_host");
@@ -23,7 +23,7 @@ function connect_app_param_db($param_parser)
       $app_driver = "ibase";
     }else{
       //$app_driver = "ibase";
-      $msg = tr("данный php скрипт не настроен для подключения к бд приложения через драйвер \"".$app_driver."\" (возможен тока драйвер \"qibase\")\n");
+      $msg = tr("РґР°РЅРЅС‹Р№ php СЃРєСЂРёРїС‚ РЅРµ РЅР°СЃС‚СЂРѕРµРЅ РґР»СЏ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р±Рґ РїСЂРёР»РѕР¶РµРЅРёСЏ С‡РµСЂРµР· РґСЂР°Р№РІРµСЂ \"".$app_driver."\" (РІРѕР·РјРѕР¶РµРЅ С‚РѕРєР° РґСЂР°Р№РІРµСЂ \"qibase\")\n");
       die($msg);
     }
     
@@ -32,10 +32,10 @@ function connect_app_param_db($param_parser)
     
     $b = $db->connect($app_driver,$app_database,$app_user_name,$app_user_password,"WIN1251");
     if(!$b){
-      $msg = tr("подключения к БД приложения НЕ УСТАНОВЛЕНО!\n".$db->last_error());
+      $msg = tr("РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р” РїСЂРёР»РѕР¶РµРЅРёСЏ РќР• РЈРЎРўРђРќРћР’Р›Р•РќРћ!\n".$db->last_error());
       die($msg);
     }
-    echo tr("подключение к БД приложения успешно установлено!\n");
+    echo tr("РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р‘Р” РїСЂРёР»РѕР¶РµРЅРёСЏ СѓСЃРїРµС€РЅРѕ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ!\n");
      
     return $db;
 }

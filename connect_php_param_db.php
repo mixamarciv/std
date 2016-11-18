@@ -1,4 +1,4 @@
-<?php
+п»ї<?php
 include_once(dirname(__FILE__)."/strFunc.php");
 include_once(dirname(__FILE__)."/paramParser.php");
 include_once(dirname(__FILE__)."/class_myDb.php");
@@ -9,13 +9,13 @@ function connect_php_param_db($param_parser)
 {
     if(is_null($param_parser))
     {
-        echo tr("ошибка вызова функции: connect_php_param_db, переменная param_parser незадана!");
+        echo tr("РѕС€РёР±РєР° РІС‹Р·РѕРІР° С„СѓРЅРєС†РёРё: connect_php_param_db, РїРµСЂРµРјРµРЅРЅР°СЏ param_parser РЅРµР·Р°РґР°РЅР°!");
         die("");
     }
     $php_database = $param_parser->fvar("php_database");
     if(strlen($php_database)<1)
     {
-      $msg = tr("подключения к БД из php скрипта НЕ ВОЗМОЖНО!, переменная/параметр \"php_database\" незадана\n");
+      $msg = tr("РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р” РёР· php СЃРєСЂРёРїС‚Р° РќР• Р’РћР—РњРћР–РќРћ!, РїРµСЂРµРјРµРЅРЅР°СЏ/РїР°СЂР°РјРµС‚СЂ \"php_database\" РЅРµР·Р°РґР°РЅР°\n");
       die($msg);
     }
 
@@ -33,11 +33,11 @@ function connect_php_param_db($param_parser)
     //my_writeToFile("!!connect_log.txt","a","$php_driver,$php_database,$php_user_name,$php_user_password,$php_db_codepage,$php_db_role\n");
     if(!$b)
     {
-      $msg = tr("подключения к БД(\"$php_driver\") из php скрипта НЕ УСТАНОВЛЕНО!\n".$db->last_error());
+      $msg = tr("РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”(\"$php_driver\") РёР· php СЃРєСЂРёРїС‚Р° РќР• РЈРЎРўРђРќРћР’Р›Р•РќРћ!\n".$db->last_error());
       $msg.= "\ndb_info:\n".$db->info();
       die($msg);
     }
-    echo tr("подключение к БД(\"$php_driver\") из php скрипта успешно установлено!\n");
+    echo tr("РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р‘Р”(\"$php_driver\") РёР· php СЃРєСЂРёРїС‚Р° СѓСЃРїРµС€РЅРѕ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ!\n");
      
     return $db;
 }

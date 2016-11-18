@@ -427,3 +427,17 @@ function mx_str_format($var,$need_length,$align='left'){
   }
 }
 //-----------------------------------------------------------------------------
+function array_implode( $glue, $separator, $array ) {
+    if ( ! is_array( $array ) ) return $array;
+    $string = array();
+    foreach ( $array as $key => $val ) {
+        if ( is_array( $val ) )
+            $val = implode( ',', $val );
+        $string[] = "{$key}{$glue}{$val}";
+        
+    }
+    return implode( $separator, $string );
+    
+}
+//-----------------------------------------------------------------------------
+

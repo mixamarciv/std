@@ -1,12 +1,12 @@
-<?php
+ï»¿<?php
 //include_once("strFunc.php");
 
 //-----------------------------------------------------------------------------
 function include_html($filePath,$fileURL="",$file_type="html",$include_type="html"){
-//ïîäêëþ÷àåì ê äîêóìåíòó âíåøíèé ôàéë â çàâèñèìîñòè îò $include_type
-// $include_type="html" - â òåëå äîêóìåíòà
-// $include_type="url"  - êàê ññûëêó íà âíåøíèé ôàéë â òåëå ýòîãî äîêóìåíòà
-// è $file_type
+//Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ðº Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ñƒ Ð²Ð½ÐµÑˆÐ½Ð¸Ð¹ Ñ„Ð°Ð¹Ð» Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ $include_type
+// $include_type="html" - Ð² Ñ‚ÐµÐ»Ðµ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð°
+// $include_type="url"  - ÐºÐ°Ðº ÑÑÑ‹Ð»ÐºÑƒ Ð½Ð° Ð²Ð½ÐµÑˆÐ½Ð¸Ð¹ Ñ„Ð°Ð¹Ð» Ð² Ñ‚ÐµÐ»Ðµ ÑÑ‚Ð¾Ð³Ð¾ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð°
+// Ð¸ $file_type
 // $file_type="html"
 // $file_type="stylesheet" | "text/css" | "css"
 // $file_type="text/javascript" | "javascript"
@@ -39,7 +39,7 @@ function include_html($filePath,$fileURL="",$file_type="html",$include_type="htm
 }
 //-----------------------------------------------------------------------------
 function include_once_dir($includePath){
-    //âêëþ÷àåò âñå ôàéëû èç óêàçàííîé äèðåêòîðèè è ïîääèðåêòîðèé
+    //Ð²ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ Ð²ÑÐµ Ñ„Ð°Ð¹Ð»Ñ‹ Ð¸Ð· ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ð¾Ð¹ Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸Ð¸ Ð¸ Ð¿Ð¾Ð´Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸Ð¹
     if(is_dir($includePath)){
         if($dh = opendir($includePath)){
             while(($file = readdir($dh)) !== false){

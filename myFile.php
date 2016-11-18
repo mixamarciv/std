@@ -8,8 +8,7 @@ function my_writeToFile($file, $mode, $str){
   fclose($f);
 }
 //-----------------------------------------------------------------------------
-function my_readFile($file,$from=0,$bytes=5000000 /*1mb*/) 
-{
+function my_readFile($file,$from=0,$bytes=5000000){
   $f = fopen($file,"rb");
   fseek($f,$from);
   $str = fread($f,$bytes);
@@ -17,3 +16,12 @@ function my_readFile($file,$from=0,$bytes=5000000 /*1mb*/)
   return $str;
 }
 //-----------------------------------------------------------------------------
+function mkdir_r($dirName){
+    $dirs = explode('/', $dirName);
+    $dir='';
+    foreach ($dirs as $part) {
+        $dir.=$part.'/';
+        if (!is_dir($dir) && strlen($dir)>0)
+            mkdir($dir);
+    }
+}
